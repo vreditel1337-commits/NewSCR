@@ -148,11 +148,7 @@ URL2="https://files.yukikras.net/3x-ui/v2.6.7.x-ui-linux-amd64.tar.gz"
 FILE="x-ui-linux-${ARCH}.tar.gz"
 
 if ! wget -q -O "$FILE" "$URL1"; then
-    echo "Не удалось скачать с GitHub, пробую зеркало..."
-    wget -q -O "$FILE" "$URL2" || {
-        echo "Ошибка: не удалось скачать файл ни с одного источника"
-        exit 1
-    }
+
 fi
 
 systemctl stop x-ui 2>/dev/null
